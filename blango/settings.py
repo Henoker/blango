@@ -44,6 +44,7 @@ class Dev(Configuration):
         'django.contrib.messages',
         'django.contrib.staticfiles',
         'blog',
+        'blango_auth',
         'crispy_forms',
         'crispy_bootstrap5',
         'debug_toolbar',
@@ -80,7 +81,7 @@ class Dev(Configuration):
 
     WSGI_APPLICATION = 'blango.wsgi.application'
 
-
+    AUTH_USER_MODEL = "blango_auth.User"
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
