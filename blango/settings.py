@@ -63,6 +63,10 @@ class Dev(Configuration):
     INTERNAL_IPS = ["192.168.11.179"]
     ROOT_URLCONF = 'blango.urls'
 
+    EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+    ACCOUNT_ACTIVATION_DAYS = 7
+    # REGISTRATION_OPEN = False
+    
     TEMPLATES = [
         {
             'BACKEND': 'django.template.backends.django.DjangoTemplates',
