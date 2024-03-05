@@ -54,6 +54,7 @@ class Dev(Configuration):
         'allauth.socialaccount',
         'allauth.socialaccount.providers.google',
         'rest_framework',
+        'rest_framework.authtoken',
     ]
 
     MIDDLEWARE = [
@@ -111,6 +112,14 @@ class Dev(Configuration):
           "ALTERNATIVE_DATABASE_URL",
           default=f"sqlite:///{BASE_DIR}/alternative_db.sqlite3",
       ),
+    }
+
+    REST_FRAMEWORK = {
+      "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework.authentication.BasicAuthentication",
+        "rest_framework.authentication.SessionAuthentication",
+        "rest_framework.authentication.TokenAuthentication",
+      ]
     }
   
     # Password Hashing 
@@ -214,3 +223,5 @@ class Dev(Configuration):
         "level": "DEBUG",
     },
   }
+
+  
