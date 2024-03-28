@@ -12,6 +12,15 @@
         {% include "blog/post-byline.html" %}
     </div>
 {% endrow %}
+{% row %}
+{% if post.hero_image %}
+    {% row %}
+        {% col %}
+            <img class="img-fluid" src="{{ post.hero_image.url }}">
+        {% endcol %}
+    {% endrow %}
+{% endif %}
+{% row %}
 
 {% row %}
     <div class="col">
